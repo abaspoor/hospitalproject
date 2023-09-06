@@ -40,12 +40,14 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'corsheaders',
+    "django_apscheduler",
     'api',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -73,6 +75,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'monitoring.wsgi.application'
 
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:9045",
+    ]
+
+CORS_ALLOW_HEADERS=[
+    'Content-Type',
+    'Authorization'
+]
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
@@ -125,3 +135,9 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# apscheduler config
+
+SCHEDULER_AUTOSTART = True
+SCHEDULER_RUN_EVERY = {
+    'seconds': 30,
+}
