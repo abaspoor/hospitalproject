@@ -7,7 +7,7 @@ import re
 from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.response import Response
 
-from api.mainmodels.hospitals import Hospital
+from ..mainmodels.hospitals import Hospital
 
 
 # models

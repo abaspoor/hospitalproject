@@ -1,6 +1,6 @@
 from django.db import models
 
-from api.mainmodels.hospitals import Hospital
+from ..mainmodels.hospitals import Hospital
 
 
 class Sensors(models.Model):

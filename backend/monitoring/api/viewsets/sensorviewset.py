@@ -10,9 +10,9 @@ from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import AllowAny, IsAuthenticated, IsAuthenticatedOrReadOnly
 from datetime import datetime
 # models
-from api.mainmodels.hospitals import Hospital
-from api.mainmodels.sensors import Sensors
-from api.serializers.sensorserializer import SensorSerializer
+from ..mainmodels.hospitals import Hospital
+from ..mainmodels.sensors import Sensors
+from ..serializers.sensorserializer import SensorSerializer
 
 
 class SensorViewSet(viewsets.ModelViewSet):
@@ -20,3 +20,12 @@ class SensorViewSet(viewsets.ModelViewSet):
     serializer_class = SensorSerializer
     # authentication_classes = [TokenAuthentication]
     # permission_classes = [AllowAny]
+
+    @action(methods=['POST'], detail=False)
+    def sensorsvaluse(self, request):
+        num = request.data['num']
+        datas = Sensors.objects.order_by('-datetime')[:int(num)]
+        datas = SensorSerializer(datas, many=True)
+        finaldata = datas.data
+        print(finaldata)
+        return Response(finaldata,status=status.HTTP_200_OK)
