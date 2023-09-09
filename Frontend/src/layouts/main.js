@@ -8,7 +8,7 @@ import Sensors from "../components/datas/sensors";
 const Main = () => {
     return (
         <>
-            <Header/>
+            {/*<Header/>*/}
             <Routes >
                 <Route exact path="/signin/" Component={Sensors}/>
             </Routes >
