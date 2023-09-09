@@ -76,7 +76,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'monitoring.wsgi.application'
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
+    "http://localhost:14308",
     ]
 
 CORS_ALLOW_HEADERS=[

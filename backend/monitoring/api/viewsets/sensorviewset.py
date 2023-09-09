@@ -27,5 +27,4 @@ class SensorViewSet(viewsets.ModelViewSet):
         datas = Sensors.objects.order_by('-datetime')[:int(num)]
         datas = SensorSerializer(datas, many=True)
         finaldata = datas.data
-        print(finaldata)
         return Response(finaldata,status=status.HTTP_200_OK)
