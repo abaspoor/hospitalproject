@@ -15,4 +15,4 @@ from ..mainmodels.sensors import Sensors
 class SensorSerializer(serializers.ModelSerializer):
     class Meta:
         model = Sensors
-        fields = ('hospital', 'pressure', 'temp', 'datetime')
+        fields = ('hospital', 'pressure', 'tempin', 'purity', 'tempout', 'datetime')

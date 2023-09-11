@@ -12,11 +12,14 @@ def generate_random_float(start, end):
 def storevalues():
     myhospital = Hospital.objects.get(id=1)
     mypressure = generate_random_float(4.3,5.7)
-    mytemp = generate_random_float(25.6 , 34.7)
-    sensor = Sensors.objects.create(hospital= myhospital, datetime=datetime.now().__format__("%Y-%m-%dT%H:%M:%SZ"), pressure=mypressure, temp=mytemp)
+    mytempin = generate_random_float(25.6 , 34.7)
+    mypurity = generate_random_float(80, 99.8)
+    mytempout = generate_random_float(25.6, 34.7)
+    sensor = Sensors.objects.create(hospital= myhospital, datetime=datetime.now().__format__("%Y-%m-%dT%H:%M:%SZ"),
+                                    pressure=mypressure, tempin=mytempin, purity=mypurity, tempout=mytempout)
     print('successfully created')
 
 
 scheduler = BackgroundScheduler()
-scheduler.add_job(storevalues, 'interval', seconds=30)
+scheduler.add_job(storevalues, 'interval', seconds=60)
 scheduler.start()
