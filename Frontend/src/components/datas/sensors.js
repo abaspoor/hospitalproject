@@ -27,7 +27,7 @@ const Sensors = () => {
                 const reformattedData = mergedObj.map((item,index) => ({
                     // datetime: new Date(item.datetime).toLocaleTimeString(),
                     // datetime: dayjs(item.datetime).utc().format('YYYY-MM-DD HH:mm:ss'),
-                    datetime: dayjs(item.datetime).utc().format('mm:ss'),
+                    datetime: dayjs(item.datetime).utc().format('HH:mm:ss'),
                     pressure: item.pressure,
                     tempin: item.tempin,
                     tempout: item.tempout,

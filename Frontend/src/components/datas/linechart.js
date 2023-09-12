@@ -38,9 +38,15 @@ const CustomLinechart = ({Dataset, XAxis, Series}) => {
     };
     return (
         <LineChart
-            xAxis={[
-                XAxis
-            ]}
+            xAxis={[XAxis]}
+            // slotProps={{
+            //     axisTickLabel: {
+            //         sx: {
+            //             rotate: '45deg'
+            //         }
+            //     },
+            // }}
+
             // series={Object.keys(keyToLabel).map((key) => ({
             //     dataKey: key,
             //     label: keyToLabel[key],
@@ -52,6 +58,12 @@ const CustomLinechart = ({Dataset, XAxis, Series}) => {
             yAxis={[{ id: 'leftAxisId' }]}//, { id: 'rightAxisId' }]}
             // rightAxis="rightAxisId"
             dataset={Dataset}
+            sx={{
+                "& .MuiChartsAxis-directionX": {
+                    "& .MuiChartsAxis-tickLabel": {
+                        rotate: "30deg",
+                    }
+                }}}
             {...customize}
         />
     );

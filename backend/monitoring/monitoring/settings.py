@@ -77,6 +77,7 @@ WSGI_APPLICATION = 'monitoring.wsgi.application'
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
+    "https://monitoring.iran.liara.run",
     ]
 
 CORS_ALLOW_HEADERS=[
