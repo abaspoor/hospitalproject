@@ -10,9 +10,9 @@ from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import AllowAny, IsAuthenticated, IsAuthenticatedOrReadOnly
 from datetime import datetime
 # models
-from ..mainmodels.hospitals import Hospital
-from ..mainmodels.sensors import Sensors
-from ..serializers.sensorserializer import SensorSerializer
+from api.mainmodels.hospitals import Hospital
+from api.mainmodels.sensors import Sensors
+from api.serializers.sensorserializer import SensorSerializer
 
 
 class SensorViewSet(viewsets.ModelViewSet):

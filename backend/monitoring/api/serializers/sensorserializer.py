@@ -7,7 +7,7 @@ import re
 from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.response import Response
 
-from ..mainmodels.sensors import Sensors
+from api.mainmodels.sensors import Sensors
 
 
 # models
